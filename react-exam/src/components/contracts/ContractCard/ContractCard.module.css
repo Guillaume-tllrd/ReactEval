@@ -1,0 +1,65 @@
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  width: 300px; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cardTitle {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.cardDesc {
+  color: #666;
+  font-size: 0.9rem;
+  flex-grow: 1; 
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+
+/* --- Variantes selon le statut (Correspond aux valeurs API) --- */
+.Available {
+  border-left: 5px solid #27ae60; /* Vert */
+}
+.Available .statusBadge {
+  background-color: #eafaf1;
+  color: #27ae60;
+}
+
+.Assigned {
+  border-left: 5px solid #f39c12; /* Orange */
+}
+.Assigned .statusBadge {
+  background-color: #fef5e7;
+  color: #f39c12;
+}
+
+.Completed {
+  border-left: 5px solid #7f8c8d; /* Gris */
+  opacity: 0.7;
+}
+.Completed .statusBadge {
+  background-color: #f2f3f4;
+  color: #7f8c8d;
+}
