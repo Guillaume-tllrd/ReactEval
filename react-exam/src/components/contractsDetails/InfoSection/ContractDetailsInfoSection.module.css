@@ -1,0 +1,18 @@
+.section {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-weight: bold;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.content {
+  line-height: 1.5;
+  color: #333;
+}

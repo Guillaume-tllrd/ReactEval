@@ -63,3 +63,21 @@
   background-color: #f2f3f4;
   color: #7f8c8d;
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Pousse le footer vers le bas */
+}
+
+.detailsLink {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.detailsLink:hover {
+  text-decoration: underline;
+}

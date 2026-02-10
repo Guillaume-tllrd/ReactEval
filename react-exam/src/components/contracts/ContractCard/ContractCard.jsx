@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './ContractCard.module.css';
 
 const ContractCard = ({ contract }) => {
@@ -12,9 +13,15 @@ const ContractCard = ({ contract }) => {
       <h3 className={styles.cardTitle}>{contract.title}</h3>
       <p className={styles.cardDesc}>{contract.description}</p>
       
-      {/* On cible le style .statusBadge À L'INTÉRIEUR du style spécifique (voir CSS) */}
-      <div className={styles.statusBadge}>
-        {contract.status}
+      <div className={styles.footer}>
+        <div className={styles.statusBadge}>
+          {contract.status}
+        </div>
+        
+        {/* Lien vers la page de détail */}
+        <Link to={`/contracts/${contract.id}`} className={styles.detailsLink}>
+          Voir détails &rarr;
+        </Link>
       </div>
     </article>
   );

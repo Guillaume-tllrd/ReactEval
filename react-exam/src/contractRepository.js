@@ -1,5 +1,9 @@
-/**
-   * Récupère la liste de tous les contrats
+
+  /**
+   * Récupère la liste de tous les contrats en fonction dutitre et/ou du statut
+   * @param {*} title 
+   * @param {*} status 
+   * @returns 
    */
 export const getAllContracts = async (title = '', status = '') => {
   
@@ -24,5 +28,20 @@ export const getAllContracts = async (title = '', status = '') => {
   } catch (error) {
     console.error("Erreur dans contractRepository:", error);
     throw error; 
+  }
+};
+/**
+ * Récupère les détails d'un contrat spécifique par son ID
+ * @param {*} id 
+ * @returns 
+ */
+export const getContractById = async (id) => {
+  try {
+    const response = await fetch(`/api/contracts/${id}`);
+    if (!response.ok) throw new Error(`Erreur HTTP: ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.error("Erreur getContractById:", error);
+    throw error;
   }
 };

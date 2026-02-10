@@ -1,0 +1,41 @@
+.header {
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.8rem;
+}
+
+/* Style de base du badge */
+.statusBadge {
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: #f8f9fa; 
+  border: 1px solid #ddd;
+}
+
+/* --- Couleurs spécifiques par statut --- */
+.Available {
+  color: #27ae60;      
+  border-color: #27ae60;
+  background-color: #eafaf1;
+}
+
+.Assigned {
+  color: #d35400;      
+  background-color: #ffe6d5;
+}
+
+.Completed {
+  color: #7f8c8d;      
+  border-color: #7f8c8d;
+  background-color: #f0f3f4;
+}
