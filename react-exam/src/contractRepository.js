@@ -1,4 +1,3 @@
-
   /**
    * Récupère la liste de tous les contrats en fonction dutitre et/ou du statut
    * @param {*} title 
@@ -30,6 +29,7 @@ export const getAllContracts = async (title = '', status = '') => {
     throw error; 
   }
 };
+
 /**
  * Récupère les détails d'un contrat spécifique par son ID
  * @param {*} id 
@@ -42,6 +42,31 @@ export const getContractById = async (id) => {
     return await response.json();
   } catch (error) {
     console.error("Erreur getContractById:", error);
+    throw error;
+  }
+};
+
+/**
+ * Crée un nouveau contrat
+ * @param {Object} contractData - { title, description, reward }
+ */
+export const createContract = async (contractData) => {
+  try {
+    const response = await fetch('/api/contracts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contractData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Erreur createContract:", error);
     throw error;
   }
 };
