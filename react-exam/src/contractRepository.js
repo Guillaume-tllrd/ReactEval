@@ -102,13 +102,13 @@ export const updateContract = async (id, contractData) => {
  * @param {*} witcherId 
  * @returns 
  */
-export const assignContract = async (witcherId) => {
+export const assignContract = async (contractId,witcherId) => {
 
   try {
-    const response = await fetch(`/api/contracts/${witcherId}/assignedTo`, {
+    const response = await fetch(`/api/contracts/${contractId}/assignedTo`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ assignedTo: witcherId }) 
+      headers: { 'Content-Type': 'application/json' }, 
+      body: JSON.stringify(Number(witcherId))
     });
     if (!response.ok) throw new Error(`Erreur assignation: ${response.status}`);
     return await response.json();

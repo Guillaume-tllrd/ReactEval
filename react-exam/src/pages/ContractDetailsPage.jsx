@@ -17,7 +17,7 @@ const ContractDetailsPage = () => {
 
   const handleAssign = async () => {
     if (confirm("Acceptez-vous cette mission périlleuse ?")) {
-      await assignContract( currentWitcher.id);
+      await assignContract( Number(id), Number(currentWitcher.id));
       reload(); 
     }
   };
