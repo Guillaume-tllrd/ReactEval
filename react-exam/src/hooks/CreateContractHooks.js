@@ -20,7 +20,6 @@ export const useCreateContract = () => {
       [name]: value
     }));
   };
-
   
   const submitContract = async () => {
     

@@ -70,3 +70,29 @@ export const createContract = async (contractData) => {
     throw error;
   }
 };
+
+/**
+ * Met à jour un contrat existant
+ * @param {string} id - L'identifiant du contrat
+ * @param {Object} contractData - Les nouvelles données { title, description, reward }
+ */
+export const updateContract = async (id, contractData) => {
+  try {
+    const response = await fetch(`/api/contracts/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contractData),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Erreur HTTP: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Erreur updateContract:", error);
+    throw error;
+  }
+};

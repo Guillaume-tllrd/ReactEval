@@ -1,6 +1,6 @@
 import styles from './ContractForm.module.css';
 
-const ContractForm = ({ formData, onChange, onSubmit, loading, error }) => {
+const ContractForm = ({ formData, onChange, onSubmit, loading, error, submitLabel = "Valider" }) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ const ContractForm = ({ formData, onChange, onSubmit, loading, error }) => {
       </div>
 
       <button type="submit" className={styles.submitButton} disabled={loading}>
-        {loading ? 'Publication en cours...' : 'Placarder le contrat'}
+        {loading ? 'Traitement...' : submitLabel}
       </button>
     </form>
   );

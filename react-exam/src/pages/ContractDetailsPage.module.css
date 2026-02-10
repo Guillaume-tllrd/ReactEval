@@ -31,9 +31,29 @@
   margin-bottom: 5px;
 }
 
+.actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.editButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f39c12; /* Jaune/Orange */
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.editButton:hover {
+  background-color: #e67e22;
+}
+
 .backButton {
   display: inline-block;
-  margin-top: 20px;
   padding: 10px 20px;
   background-color: #34495e;
   color: white;

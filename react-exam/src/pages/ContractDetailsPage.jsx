@@ -28,7 +28,14 @@ const ContractDetailsPage = () => {
 
       {witcher && <WitcherInfo witcher={witcher} />}
 
-      <Link to="/" className={styles.backButton}>← Retour au tableau</Link>
+      <div className={styles.actions}>
+      <Link to="/" className={styles.backButton}>← Retour</Link>
+      
+      
+      <Link to={`/contracts/${id}/edit`} className={styles.editButton}>
+        Modifier le contrat
+      </Link>
+  </div>
     </main>
   )
 };
