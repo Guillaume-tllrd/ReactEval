@@ -96,3 +96,45 @@ export const updateContract = async (id, contractData) => {
     throw error;
   }
 };
+
+/**
+ * Assigne un contrat à un witcher
+ * @param {*} witcherId 
+ * @returns 
+ */
+export const assignContract = async (witcherId) => {
+
+  try {
+    const response = await fetch(`/api/contracts/${witcherId}/assignedTo`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ assignedTo: witcherId }) 
+    });
+    if (!response.ok) throw new Error(`Erreur assignation: ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.error("Erreur assignContract:", error);
+    throw error;
+  }
+};
+
+/**
+ * Marque un contrat comme terminé
+ * @param {*} contractId 
+ * @returns 
+ */
+export const completeContract = async (contractId) => {
+    const cId = parseInt(contractId, 10);
+  try {
+    const response = await fetch(`/api/contracts/${cId}/status`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify('Completed')
+    });
+    if (!response.ok) throw new Error(`Erreur completion: ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    console.error("Erreur completeContract:", error);
+    throw error;
+  }
+};

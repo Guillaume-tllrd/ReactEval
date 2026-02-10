@@ -8,7 +8,7 @@ export const useContractDetails = (contractId) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+ 
     const fetchData = async () => {
       try {
         setLoading(true);
@@ -27,11 +27,11 @@ export const useContractDetails = (contractId) => {
         setLoading(false);
       }
     };
-
+ useEffect(() => {
     if (contractId) {
       fetchData();
     }
   }, [contractId]);
 
-  return { contract, witcher, loading, error };
+  return { contract, witcher, loading, error, reload: fetchData };
 };
